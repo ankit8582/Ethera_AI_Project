@@ -1,4 +1,18 @@
 {
+  "private": true,
+  "name": "ethera-ai-project",
+  "version": "1.0.0",
+  "workspaces": [
+    "backend",
+    "team-task-manager"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd team-task-manager && npm start",
+    "build:frontend": "cd team-task-manager && npm run build",
+    "build:backend": "cd backend && npm run build || echo \"No backend build step required\""
+  },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.4",
     "tailwindcss": "^4.2.4"
