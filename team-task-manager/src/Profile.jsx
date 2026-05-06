@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Profile({ currentUser }) {
   return (
     <div className="min-h-screen p-6 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-slate-900 dark:to-zinc-900">
