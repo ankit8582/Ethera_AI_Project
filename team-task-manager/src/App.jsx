@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, memo, useRef } from "react";
 import { BrowserRouter, Routes, Route, Navigate, Link, useNavigate } from "react-router-dom";
 import { auth, firebaseEnabled } from "./firebaseConfig";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Profile from "./Profile";
 import {
   authRegister,
@@ -1226,6 +1227,29 @@ function App() {
     }
   };
 
+  const googleLogin = async (navigate) => {
+    if (!firebaseEnabled) {
+      showNotification("Firebase not configured.", "error");
+      return;
+    }
+
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = {
+        username: result.user.displayName || result.user.email.split("@")[0],
+        email: result.user.email,
+        uid: result.user.uid,
+      };
+      setCurrentUser(user);
+      loadTasks(user.uid);
+      showNotification(`Welcome, ${user.username}!`, "success");
+      navigate("/dashboard");
+    } catch (error) {
+      showNotification(error.message, "error");
+    }
+  };
+
   const logout = async (navigate) => {
     if (firebaseEnabled) {
       try {
@@ -1416,6 +1440,7 @@ function App() {
           loginEmailRef={loginEmailRef}
           loginPasswordRef={loginPasswordRef}
           loginUser={loginUser}
+          googleLogin={googleLogin}
         />} />
         <Route path="/register" element={currentUser ? <Navigate to="/dashboard" replace /> : <RegisterPage
           darkMode={darkMode}

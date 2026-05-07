@@ -11,6 +11,7 @@ export default function LoginPage({
   loginPassword,
   setLoginPassword,
   loginUser,
+  googleLogin,
 }) {
   const navigate = useNavigate();
 
@@ -82,6 +83,14 @@ export default function LoginPage({
             >
               Login
             </button>
+            {firebaseEnabled && (
+              <button
+                onClick={() => googleLogin(navigate)}
+                className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-4 rounded-xl font-semibold hover:from-red-600 hover:to-red-700 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200 mt-4"
+              >
+                Sign in with Google
+              </button>
+            )}
           </div>
           <p className="text-sm text-gray-500 mt-4">
             New user?{" "}
