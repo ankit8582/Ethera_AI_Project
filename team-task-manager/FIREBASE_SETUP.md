@@ -25,7 +25,7 @@
 
 ## 4. Configure Environment Variables
 1. Copy `.env` file and rename it to `.env.local`
-2. Replace the placeholder values with your Firebase config:
+2. Replace the placeholder values with your Firebase config from the SDK setup and configuration section.
    ```
    VITE_FIREBASE_API_KEY=your_actual_api_key
    VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
@@ -34,6 +34,8 @@
    VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
    VITE_FIREBASE_APP_ID=your_app_id
    ```
+3. For `VITE_FIREBASE_STORAGE_BUCKET`, use the exact value shown in Firebase Console. If the console shows a default bucket, it is usually `your_project_id.appspot.com`.
+4. Optionally add `VITE_FIREBASE_MEASUREMENT_ID` if shown in the Firebase config object.
 
 ## 5. Deploy and Test
 1. Build and deploy your application
