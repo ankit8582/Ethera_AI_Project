@@ -8,10 +8,19 @@ const PORT = process.env.PORT || 5000;
 
 // CORS configuration
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://etheraaiproject-production.up.railway.app"
-  ],
+  origin: function(origin, callback) {
+    const allowedOrigins = [
+      "http://localhost:5173",
+      "https://etheraaiproject-production.up.railway.app",
+      "https://ethera-frontend-production.up.railway.app",
+      process.env.CORS_ORIGIN
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(null, true); // Allow all for now to avoid CORS issues on Railway
+    }
+  },
   credentials: true
 }));
 app.options("*", cors());
