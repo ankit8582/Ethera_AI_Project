@@ -105,7 +105,7 @@ export default function LoginPage({
             </Link>
           </p>
           <p className="text-xs text-gray-400 mt-4">
-            Firebase auth is {firebaseEnabled ? "enabled" : "not configured yet"}.
+            Firebase auth is {firebaseEnabled ? "enabled" : "not configured yet"}. If you receive an "invalid-credential" error, verify Email/Password sign-in is enabled in Firebase Authentication.
           </p>
         </div>
       </div>

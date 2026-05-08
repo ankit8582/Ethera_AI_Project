@@ -27,6 +27,12 @@ let auth;
 if (firebaseEnabled) {
   app = initializeApp(firebaseConfig);
   auth = getAuth(app);
+
+  if (typeof window !== "undefined" && window.location.origin === "http://localhost:5173") {
+    console.info(
+      "Firebase is enabled. Make sure localhost:5173 is added as an authorized domain in Firebase Authentication."
+    );
+  }
 } else {
   console.warn("Firebase not configured. Please set up environment variables.");
 }

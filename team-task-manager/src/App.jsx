@@ -1129,6 +1129,28 @@ function App() {
     saveUserTasks(userId, tasksToSave);
   };
 
+  const getFirebaseErrorMessage = (error) => {
+    const errorCode = error?.code || "";
+    switch (errorCode) {
+      case "auth/email-already-in-use":
+        return "This email is already registered. Please login or use a different email.";
+      case "auth/invalid-email":
+        return "Invalid email format. Please enter a valid email address.";
+      case "auth/weak-password":
+        return "Password is too weak. Use at least 6 characters.";
+      case "auth/wrong-password":
+        return "Invalid email or password. Please try again.";
+      case "auth/user-not-found":
+        return "No account found with this email. Please register first.";
+      case "auth/operation-not-allowed":
+        return "Email/Password sign-in is disabled in Firebase Authentication settings.";
+      case "auth/network-request-failed":
+        return "Network error. Check your internet connection and try again.";
+      default:
+        return error?.message || "Firebase authentication failed.";
+    }
+  };
+
   const registerUser = async (navigate) => {
     const username = regUsername.trim();
     const email = regEmail.trim().toLowerCase();
@@ -1163,7 +1185,8 @@ function App() {
         navigate("/dashboard");
         return;
       } catch (error) {
-        showNotification(error.message, "error");
+        console.error("Firebase register error:", error?.code, error?.message, error);
+        showNotification(getFirebaseErrorMessage(error), "error");
         return;
       }
     }
@@ -1207,7 +1230,8 @@ function App() {
         navigate("/dashboard");
         return;
       } catch (error) {
-        showNotification(error.message, "error");
+        console.error("Firebase login error:", error?.code, error?.message, error);
+        showNotification(getFirebaseErrorMessage(error), "error");
         return;
       }
     }
@@ -1246,7 +1270,8 @@ function App() {
       showNotification(`Welcome, ${user.username}!`, "success");
       navigate("/dashboard");
     } catch (error) {
-      showNotification(error.message, "error");
+      console.error("Firebase Google sign-in error:", error?.code, error?.message, error);
+      showNotification(getFirebaseErrorMessage(error), "error");
     }
   };
 
