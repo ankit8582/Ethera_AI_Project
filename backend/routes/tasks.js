@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
     
     let tasks = allTasks;
     if (projectId) {
-      tasks = tasks.filter(t => t.projectId === projectId);
+      tasks = tasks.filter(t => t.projectId?.toString() === projectId);
     }
     if (userId) {
       tasks = tasks.filter(t => t.userId === userId || t.assignedTo === userId);

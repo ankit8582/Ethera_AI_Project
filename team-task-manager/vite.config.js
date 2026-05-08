@@ -11,7 +11,7 @@ export default defineConfig(({ command }) => ({
   ],
   server: {
     allowedHosts: [
-      'etheraaiproject-production.up.railway.app'
+      'ethera-frontend-production.up.railway.app'
     ]
   }
 }))

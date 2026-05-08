@@ -24,10 +24,7 @@ const useJsonDB = process.env.USE_JSON_DB === 'true';
 
 if (!useJsonDB) {
   // Connect to MongoDB
-  mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/team-task-manager', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/team-task-manager')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB connection error:', err));
 } else {
