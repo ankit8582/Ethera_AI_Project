@@ -113,84 +113,44 @@ const ProjectTeamForm = memo(({
   memberEmailRef,
 }) => {
   return (
-    <div className={`${darkMode ? "bg-gray-800/90 backdrop-blur-sm" : "bg-white/90 backdrop-blur-sm"} mt-6 p-6 rounded-3xl shadow-2xl border border-white/20`}>
-      <div className="flex flex-col md:flex-row justify-between gap-3 md:items-center">
-        <h2 className="text-2xl font-bold text-purple-600">Project & Team Management</h2>
+    <div className="section-card">
+      <h2 className="heading-purple" style={{fontSize:'1.4rem',fontWeight:800,marginBottom:'20px'}}>🗂️ Project & Team Management</h2>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:'12px',marginBottom:'16px'}}>
+        <input ref={projectNameRef} type="text" name="projectName" id="projectName"
+          autoComplete="off" spellCheck="false" placeholder="Project name"
+          value={projectName} onChange={onProjectNameChange} className="input-premium" />
+        <input ref={projectDescriptionRef} type="text" name="projectDescription" id="projectDescription"
+          autoComplete="off" spellCheck="false" placeholder="Project description"
+          value={projectDescription} onChange={onProjectDescriptionChange} className="input-premium" />
+        <input ref={memberEmailRef} type="email" name="memberEmail" id="memberEmail"
+          autoComplete="off" spellCheck="false" placeholder="Member email to add"
+          value={memberEmail} onChange={onMemberEmailChange} className="input-premium" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-        <input
-          ref={projectNameRef}
-          type="text"
-          name="projectName"
-          id="projectName"
-          autoComplete="off"
-          spellCheck="false"
-          placeholder="Project name"
-          value={projectName}
-          onChange={onProjectNameChange}
-          className={`border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white" : "bg-white border-gray-200 text-black"} focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200`}
-        />
-        <input
-          ref={projectDescriptionRef}
-          type="text"
-          name="projectDescription"
-          id="projectDescription"
-          autoComplete="off"
-          spellCheck="false"
-          placeholder="Project description"
-          value={projectDescription}
-          onChange={onProjectDescriptionChange}
-          className={`border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white" : "bg-white border-gray-200 text-black"} focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200`}
-        />
-        <input
-          ref={memberEmailRef}
-          type="email"
-          name="memberEmail"
-          id="memberEmail"
-          autoComplete="off"
-          spellCheck="false"
-          placeholder="Member email to add"
-          value={memberEmail}
-          onChange={onMemberEmailChange}
-          className={`border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white" : "bg-white border-gray-200 text-black"} focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200`}
-        />
-      </div>
-      <div className="flex flex-col md:flex-row gap-4 mt-4">
-        <button
-          onClick={onCreateProject}
-          className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-4 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200"
-        >
-          Create Project
+      <div style={{display:'flex',gap:'12px',flexWrap:'wrap'}}>
+        <button onClick={onCreateProject} className="btn btn-primary" style={{flex:1,minWidth:'160px',padding:'14px'}}>
+          🚀 Create Project
         </button>
-        <button
-          onClick={() => selectedProjectId && onAddProjectMember(selectedProjectId)}
-          className="flex-1 bg-gradient-to-r from-indigo-500 to-blue-600 text-white py-4 rounded-xl font-semibold hover:from-indigo-600 hover:to-blue-700 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200"
-        >
-          Add Member to Project
+        <button onClick={() => selectedProjectId && onAddProjectMember(selectedProjectId)} className="btn btn-ghost" style={{flex:1,minWidth:'160px',padding:'14px'}}>
+          ➕ Add Member
         </button>
       </div>
       {projects.length > 0 && (
-        <div className="mt-8 space-y-6">
+        <div style={{marginTop:'24px',display:'flex',flexDirection:'column',gap:'12px'}}>
           {projects.map((project) => (
-            <div key={project._id} className={`p-6 rounded-3xl ${darkMode ? "bg-gray-900 border-gray-700" : "bg-slate-50 border-slate-200"} border shadow-lg`}>
-              <div className="flex flex-col md:flex-row md:justify-between gap-3">
+            <div key={project._id} style={{padding:'20px',borderRadius:'16px',background:'rgba(99,102,241,0.08)',border:'1px solid rgba(99,102,241,0.2)'}}>
+              <div style={{display:'flex',flexWrap:'wrap',justifyContent:'space-between',gap:'12px'}}>
                 <div>
-                  <h3 className="text-xl font-bold text-indigo-600">{project.name}</h3>
-                  <p className="text-sm text-gray-500 mt-2">{project.description || 'No description provided.'}</p>
-                  <p className="text-sm text-gray-500 mt-2">Owner: {project.ownerId?.username || 'Unknown'}</p>
+                  <h3 style={{fontSize:'1rem',fontWeight:700,color:'#a5b4fc',marginBottom:'4px'}}>{project.name}</h3>
+                  <p style={{fontSize:'0.8rem',color:'rgba(148,163,184,0.6)'}}>{project.description || 'No description provided.'}</p>
+                  <p style={{fontSize:'0.8rem',color:'rgba(148,163,184,0.5)',marginTop:'2px'}}>Owner: {project.ownerId?.username || 'Unknown'}</p>
                 </div>
-                <div className="flex flex-wrap gap-2 items-center">
+                <div style={{display:'flex',flexWrap:'wrap',gap:'6px',alignItems:'center'}}>
                   {project.members?.map((member) => (
-                    <span key={member._id} className="px-3 py-2 rounded-full bg-blue-100 text-blue-800 text-sm">
+                    <span key={member._id} className="member-badge">
                       {member.username}
                       {project.ownerId?._id !== member._id && (
-                        <button
-                          type="button"
-                          onClick={() => onRemoveProjectMember(project._id, member.email)}
-                          className="ml-2 text-red-600 hover:text-red-800"
-                        >
-                          ×
-                        </button>
+                        <button type="button" onClick={() => onRemoveProjectMember(project._id, member.email)}
+                          style={{marginLeft:'4px',color:'#fca5a5',background:'none',border:'none',cursor:'pointer',fontSize:'14px',lineHeight:1}}>×</button>
                       )}
                     </span>
                   ))}
@@ -537,7 +497,7 @@ function DashboardPage({
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div style={{flex:1,padding:'24px',maxWidth:'1280px',margin:'0 auto',width:'100%'}}>
+      <div style={{flex:1,padding:'24px',maxWidth:'1280px',margin:'0 auto',width:'100%',background:'rgba(5,5,20,0.6)',backdropFilter:'blur(10px)',boxShadow:'0 0 80px rgba(99,102,241,0.12), inset 0 1px 0 rgba(255,255,255,0.05)',borderRadius:'0 0 24px 24px',borderTop:'1px solid rgba(99,102,241,0.1)'}}>
         {notification && (
           <div className={`notification-toast ${notification.type === 'success' ? 'notification-success' : notification.type === 'warning' ? 'notification-warning' : 'notification-error'}`}>
             <span>{notification.type === 'success' ? '✅' : notification.type === 'warning' ? '⚠️' : '❌'}</span>
