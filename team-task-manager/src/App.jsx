@@ -24,28 +24,24 @@ import {
 
 function Header() {
     return (
-      <header className="bg-gradient-to-r from-blue-700 via-blue-800 to-slate-800 text-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <span className="text-2xl">📋</span>
-              </div>
+      <header className="header-premium">
+        <div style={{maxWidth:'1280px',margin:'0 auto',padding:'0 24px'}}>
+          <div className="flex justify-between items-center" style={{height:'68px'}}>
+            <div className="flex items-center" style={{gap:'14px'}}>
+              <div className="header-logo-glow" style={{fontSize:'32px'}}>📋</div>
               <div>
-                <h1 className="text-2xl font-bold text-white">
+                <h1 className="header-brand-text" style={{fontSize:'1.4rem',fontWeight:800,letterSpacing:'-0.02em'}}>
                   Team Task Manager
                 </h1>
-                <p className="text-sm opacity-90">Organize • Collaborate • Achieve</p>
+                <p style={{fontSize:'0.72rem',color:'rgba(148,163,184,0.7)',marginTop:'1px',letterSpacing:'0.08em',textTransform:'uppercase'}}>Organize • Collaborate • Achieve</p>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
-              <div className="text-right">
-                <p className="text-sm opacity-90">Welcome to</p>
-                <p className="font-semibold">Ethera AI</p>
+            <div className="flex items-center" style={{gap:'16px'}}>
+              <div style={{textAlign:'right'}}>
+                <p style={{fontSize:'0.72rem',color:'rgba(148,163,184,0.6)',textTransform:'uppercase',letterSpacing:'0.06em'}}>Powered by</p>
+                <p style={{fontWeight:700,color:'#a5b4fc',fontSize:'0.9rem'}}>Ethera AI</p>
               </div>
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-sm font-bold text-white">EA</span>
-              </div>
+              <div style={{width:'38px',height:'38px',background:'linear-gradient(135deg,#6366f1,#8b5cf6)',borderRadius:'50%',display:'flex',alignItems:'center',justifyContent:'center',boxShadow:'0 0 20px rgba(99,102,241,0.5)',fontSize:'0.85rem',fontWeight:800,color:'#fff'}}>EA</div>
             </div>
           </div>
         </div>
@@ -55,82 +51,43 @@ function Header() {
 
   function Footer() {
     return (
-      <footer className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
-                  <span>📋</span>
-                </div>
-                <h3 className="text-xl font-bold">Team Task Manager</h3>
+      <footer className="footer-premium" style={{color:'#e2e8f0'}}>
+        <div style={{maxWidth:'1280px',margin:'0 auto',padding:'48px 24px 28px'}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:'40px',marginBottom:'40px'}}>
+            <div style={{gridColumn:'span 2'}}>
+              <div style={{display:'flex',alignItems:'center',gap:'12px',marginBottom:'16px'}}>
+                <span style={{fontSize:'28px'}}>📋</span>
+                <span style={{fontSize:'1.15rem',fontWeight:800,background:'linear-gradient(135deg,#a5b4fc,#c4b5fd)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>Team Task Manager</span>
               </div>
-              <p className="text-gray-300 mb-4">
-                Streamline your team's productivity with our intuitive task management solution.
-                Built with React, Firebase, and modern web technologies.
+              <p style={{color:'rgba(148,163,184,0.7)',fontSize:'0.88rem',lineHeight:1.7,marginBottom:'20px'}}>
+                Streamline your team's productivity with our intuitive task management solution built with React, Firebase, and modern web technologies.
               </p>
-              <div className="flex space-x-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 cursor-pointer">
-                  <span>📘</span>
-                </div>
-                <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-red-700 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 cursor-pointer">
-                  <span>📷</span>
-                </div>
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 cursor-pointer">
-                  <span>🐦</span>
-                </div>
+              <div style={{display:'flex',gap:'10px'}}>
+                {['📘','📷','🐦'].map((icon,i)=>(
+                  <div key={i} style={{width:'38px',height:'38px',background:'rgba(99,102,241,0.15)',border:'1px solid rgba(99,102,241,0.3)',borderRadius:'10px',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',fontSize:'18px'}}>{icon}</div>
+                ))}
               </div>
             </div>
-
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-blue-300">
-                Features
-              </h4>
-              <ul className="space-y-2 text-gray-300">
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">Task Management</li>
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">Team Collaboration</li>
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">Progress Tracking</li>
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">Dark Mode</li>
-              </ul>
+              <h4 style={{fontSize:'0.78rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'0.08em',color:'#a5b4fc',marginBottom:'16px'}}>Features</h4>
+              {['Task Management','Team Collaboration','Progress Tracking','Dark Mode'].map((f,i)=>(
+                <p key={i} style={{color:'rgba(148,163,184,0.7)',fontSize:'0.88rem',marginBottom:'10px',cursor:'pointer'}}>{f}</p>
+              ))}
             </div>
-
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-green-300">
-                Support
-              </h4>
-              <ul className="space-y-2 text-gray-300">
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">Help Center</li>
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">Documentation</li>
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">Contact Us</li>
-                <li className="hover:text-white transition-colors duration-200 cursor-pointer">Privacy Policy</li>
-              </ul>
+              <h4 style={{fontSize:'0.78rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'0.08em',color:'#6ee7b7',marginBottom:'16px'}}>Support</h4>
+              {['Help Center','Documentation','Contact Us','Privacy Policy'].map((s,i)=>(
+                <p key={i} style={{color:'rgba(148,163,184,0.7)',fontSize:'0.88rem',marginBottom:'10px',cursor:'pointer'}}>{s}</p>
+              ))}
             </div>
           </div>
-
-          <div className="border-t border-gray-700 mt-8 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 text-sm">
-                © 2026 Ethera AI. All rights reserved. Built with ❤️ using React & Firebase.
-              </p>
-              <div className="flex items-center space-x-4 mt-4 md:mt-0">
-                <span className="text-gray-400 text-sm">Powered by</span>
-                <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full flex items-center justify-center">
-                    <span className="text-xs font-bold text-white">R</span>
-                  </div>
-                  <span className="text-sm font-semibold text-blue-300">
-                    React
-                  </span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center">
-                    <span className="text-xs font-bold text-white">F</span>
-                  </div>
-                  <span className="text-sm font-semibold text-orange-300">
-                    Firebase
-                  </span>
-                </div>
-              </div>
+          <div style={{borderTop:'1px solid rgba(99,102,241,0.15)',paddingTop:'24px',display:'flex',flexWrap:'wrap',justifyContent:'space-between',alignItems:'center',gap:'16px'}}>
+            <p style={{color:'rgba(148,163,184,0.5)',fontSize:'0.82rem'}}>© 2026 Ethera AI. All rights reserved. Built with ❤️ using React & Firebase.</p>
+            <div style={{display:'flex',alignItems:'center',gap:'8px'}}>
+              <span style={{fontSize:'0.78rem',color:'rgba(148,163,184,0.4)'}}>Powered by</span>
+              <span style={{fontSize:'0.85rem',fontWeight:700,color:'#a5b4fc'}}>React</span>
+              <span style={{color:'rgba(148,163,184,0.3)'}}>•</span>
+              <span style={{fontSize:'0.85rem',fontWeight:700,color:'#fb923c'}}>Firebase</span>
             </div>
           </div>
         </div>
@@ -275,53 +232,58 @@ function LoginPage({
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div style={{minHeight:'100vh',display:'flex',flexDirection:'column'}}>
       <Header />
-      <div className={`flex-1 p-6 ${darkMode ? "bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900" : "bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"}`}>
+      <div style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',padding:'40px 20px'}}>
         {notification && (
-          <div className={`fixed top-20 right-4 px-4 py-3 rounded-lg text-white ${notification.type === "success" ? "bg-gradient-to-r from-green-500 to-emerald-500" : "bg-gradient-to-r from-red-500 to-pink-500"} shadow-lg z-50 animate-pulse`}>
+          <div className={`notification-toast ${notification.type === 'success' ? 'notification-success' : notification.type === 'warning' ? 'notification-warning' : 'notification-error'}`}>
+            <span>{notification.type === 'success' ? '✅' : notification.type === 'warning' ? '⚠️' : '❌'}</span>
             {notification.message}
           </div>
         )}
-        <div className={`max-w-xl mx-auto ${darkMode ? "bg-gray-800/90 backdrop-blur-sm" : "bg-white/90 backdrop-blur-sm"} rounded-3xl shadow-2xl p-8 border border-white/20`}>
-          <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Login</h1>
-          <div className="space-y-4">
-            <input
-              ref={loginEmailRef}
-              type="email"
-              placeholder="Email"
-              value={loginEmail}
-              onChange={(e) => setLoginEmail(e.target.value)}
-              name="login-email"
-              autoComplete="off"
-              suppressHydrationWarning={true}
-              className={`w-full border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400" : "bg-white border-gray-200 text-black placeholder-gray-500"} focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200`}
-            />
-            <input
-              ref={loginPasswordRef}
-              type="password"
-              placeholder="Password"
-              value={loginPassword}
-              onChange={(e) => setLoginPassword(e.target.value)}
-              name="login-password"
-              autoComplete="off"
-              suppressHydrationWarning={true}
-              className={`w-full border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400" : "bg-white border-gray-200 text-black placeholder-gray-500"} focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200`}
-            />
-            <button
-              onClick={handleLogin}
-              className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-indigo-700 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200"
-            >
-              Login
-            </button>
+        <div className="animate-fade-scale" style={{width:'100%',maxWidth:'460px'}}>
+          {/* Logo / Brand */}
+          <div style={{textAlign:'center',marginBottom:'32px'}}>
+            <div style={{fontSize:'48px',marginBottom:'12px'}} className="animate-float">📋</div>
+            <h1 style={{fontSize:'2.2rem',fontWeight:900,background:'linear-gradient(135deg,#a5b4fc,#c4b5fd,#67e8f9)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',marginBottom:'6px'}}>Welcome Back</h1>
+            <p style={{color:'rgba(148,163,184,0.7)',fontSize:'0.9rem'}}>Sign in to your Ethera AI account</p>
           </div>
-          <p className="text-sm text-gray-500 mt-4">
-            New user? <Link to="/register" className="text-blue-600 underline hover:text-blue-700">Register here</Link>
-          </p>
-          <p className="text-sm text-gray-500 mt-4">
-            Forgot password? <Link to="/reset-password" className="text-blue-600 underline hover:text-blue-700">Reset it here</Link>
-          </p>
-          <p className="text-xs text-gray-400 mt-4">Firebase auth is {firebaseEnabled ? "enabled" : "not configured yet"}.</p>
+
+          {/* Card */}
+          <div className="glass-card" style={{padding:'36px'}}>
+            <div style={{display:'flex',flexDirection:'column',gap:'16px'}}>
+              <div>
+                <label className="form-label">Email Address</label>
+                <input ref={loginEmailRef} type="email" placeholder="you@example.com"
+                  value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)}
+                  name="login-email" autoComplete="off" suppressHydrationWarning={true}
+                  className="input-premium" />
+              </div>
+              <div>
+                <label className="form-label">Password</label>
+                <input ref={loginPasswordRef} type="password" placeholder="••••••••"
+                  value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)}
+                  name="login-password" autoComplete="off" suppressHydrationWarning={true}
+                  className="input-premium" />
+              </div>
+              <button onClick={handleLogin} className="btn btn-primary" style={{width:'100%',padding:'16px',fontSize:'1rem',marginTop:'8px'}}>
+                🚀 Sign In
+              </button>
+            </div>
+            <div style={{marginTop:'24px',textAlign:'center',display:'flex',flexDirection:'column',gap:'10px'}}>
+              <p style={{fontSize:'0.875rem',color:'rgba(148,163,184,0.7)'}}>
+                New user?{' '}
+                <Link to="/register" style={{color:'#a5b4fc',fontWeight:600,textDecoration:'none'}}>Create account →</Link>
+              </p>
+              <p style={{fontSize:'0.875rem',color:'rgba(148,163,184,0.7)'}}>
+                Forgot password?{' '}
+                <Link to="/reset-password" style={{color:'#c4b5fd',fontWeight:600,textDecoration:'none'}}>Reset it →</Link>
+              </p>
+              <p style={{fontSize:'0.75rem',color:'rgba(148,163,184,0.4)',marginTop:'8px'}}>
+                Firebase auth is {firebaseEnabled ? '✅ enabled' : '⚠️ not configured'}.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
@@ -350,60 +312,55 @@ function RegisterPage({
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div style={{minHeight:'100vh',display:'flex',flexDirection:'column'}}>
       <Header />
-      <div className={`flex-1 p-6 ${darkMode ? "bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900" : "bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"}`}>
+      <div style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',padding:'40px 20px'}}>
         {notification && (
-          <div className={`fixed top-20 right-4 px-4 py-3 rounded-lg text-white ${notification.type === "success" ? "bg-gradient-to-r from-green-500 to-emerald-500" : "bg-gradient-to-r from-red-500 to-pink-500"} shadow-lg z-50 animate-pulse`}>
+          <div className={`notification-toast ${notification.type === 'success' ? 'notification-success' : notification.type === 'warning' ? 'notification-warning' : 'notification-error'}`}>
+            <span>{notification.type === 'success' ? '✅' : '❌'}</span>
             {notification.message}
           </div>
         )}
-        <div className={`max-w-xl mx-auto ${darkMode ? "bg-gray-800/90 backdrop-blur-sm" : "bg-white/90 backdrop-blur-sm"} rounded-3xl shadow-2xl p-8 border border-white/20`}>
-          <h1 className="text-4xl font-bold mb-6 text-blue-600">Register</h1>
-          <div className="space-y-4">
-            <input
-              ref={regUsernameRef}
-              type="text"
-              placeholder="Username"
-              value={regUsername}
-              onChange={(e) => setRegUsername(e.target.value)}
-              name="reg-username"
-              autoComplete="off"
-              suppressHydrationWarning={true}
-              className={`w-full border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400" : "bg-white border-gray-200 text-black placeholder-gray-500"} focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200`}
-            />
-            <input
-              ref={regEmailRef}
-              type="email"
-              placeholder="Email"
-              value={regEmail}
-              onChange={(e) => setRegEmail(e.target.value)}
-              name="reg-email"
-              autoComplete="off"
-              suppressHydrationWarning={true}
-              className={`w-full border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400" : "bg-white border-gray-200 text-black placeholder-gray-500"} focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200`}
-            />
-            <input
-              ref={regPasswordRef}
-              type="password"
-              placeholder="Password"
-              value={regPassword}
-              onChange={(e) => setRegPassword(e.target.value)}
-              name="reg-password"
-              autoComplete="off"
-              suppressHydrationWarning={true}
-              className={`w-full border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400" : "bg-white border-gray-200 text-black placeholder-gray-500"} focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200`}
-            />
-            <button
-              onClick={handleRegister}
-              className="w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-blue-800 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200"
-            >
-              Register
-            </button>
+        <div className="animate-fade-scale" style={{width:'100%',maxWidth:'460px'}}>
+          <div style={{textAlign:'center',marginBottom:'32px'}}>
+            <div style={{fontSize:'48px',marginBottom:'12px'}} className="animate-float">✨</div>
+            <h1 style={{fontSize:'2.2rem',fontWeight:900,background:'linear-gradient(135deg,#c4b5fd,#a5b4fc)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',marginBottom:'6px'}}>Create Account</h1>
+            <p style={{color:'rgba(148,163,184,0.7)',fontSize:'0.9rem'}}>Join Ethera AI today</p>
           </div>
-          <p className="text-sm text-gray-500 mt-4">
-            Already have an account? <Link to="/login" className="text-purple-600 underline hover:text-purple-700">Login here</Link>
-          </p>
+          <div className="glass-card" style={{padding:'36px'}}>
+            <div style={{display:'flex',flexDirection:'column',gap:'16px'}}>
+              <div>
+                <label className="form-label">Username</label>
+                <input ref={regUsernameRef} type="text" placeholder="yourname"
+                  value={regUsername} onChange={(e) => setRegUsername(e.target.value)}
+                  name="reg-username" autoComplete="off" suppressHydrationWarning={true}
+                  className="input-premium" />
+              </div>
+              <div>
+                <label className="form-label">Email Address</label>
+                <input ref={regEmailRef} type="email" placeholder="you@example.com"
+                  value={regEmail} onChange={(e) => setRegEmail(e.target.value)}
+                  name="reg-email" autoComplete="off" suppressHydrationWarning={true}
+                  className="input-premium" />
+              </div>
+              <div>
+                <label className="form-label">Password</label>
+                <input ref={regPasswordRef} type="password" placeholder="min. 6 characters"
+                  value={regPassword} onChange={(e) => setRegPassword(e.target.value)}
+                  name="reg-password" autoComplete="off" suppressHydrationWarning={true}
+                  className="input-premium" />
+              </div>
+              <button onClick={handleRegister} className="btn btn-primary" style={{width:'100%',padding:'16px',fontSize:'1rem',marginTop:'8px'}}>
+                🎉 Create Account
+              </button>
+            </div>
+            <div style={{marginTop:'20px',textAlign:'center'}}>
+              <p style={{fontSize:'0.875rem',color:'rgba(148,163,184,0.7)'}}>
+                Already have an account?{' '}
+                <Link to="/login" style={{color:'#a5b4fc',fontWeight:600,textDecoration:'none'}}>Sign in →</Link>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
@@ -469,51 +426,50 @@ function ResetPasswordPage({
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div style={{minHeight:'100vh',display:'flex',flexDirection:'column'}}>
       <Header />
-      <div className={`flex-1 p-6 ${darkMode ? "bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900" : "bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"}`}>
+      <div style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',padding:'40px 20px'}}>
         {notification && (
-          <div className={`fixed top-20 right-4 px-4 py-3 rounded-lg text-white ${notification.type === "success" ? "bg-gradient-to-r from-green-500 to-emerald-500" : "bg-gradient-to-r from-red-500 to-pink-500"} shadow-lg z-50 animate-pulse`}>
+          <div className={`notification-toast ${notification.type === 'success' ? 'notification-success' : 'notification-error'}`}>
+            <span>{notification.type === 'success' ? '✅' : '❌'}</span>
             {notification.message}
           </div>
         )}
-        <div className={`max-w-xl mx-auto ${darkMode ? "bg-gray-800/90 backdrop-blur-sm" : "bg-white/90 backdrop-blur-sm"} rounded-3xl shadow-2xl p-8 border border-white/20`}>
-          <h1 className="text-4xl font-bold mb-6 text-blue-600">Reset Password</h1>
-          <div className="space-y-4">
-            <input
-              ref={resetEmailRef}
-              type="email"
-              placeholder="Registered email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              name="reset-email"
-              autoComplete="off"
-              suppressHydrationWarning={true}
-              className={`w-full border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400" : "bg-white border-gray-200 text-black placeholder-gray-500"} focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200`}
-            />
-            {!firebaseEnabled && (
-              <input
-                ref={resetPasswordRef}
-                type="password"
-                placeholder="New password"
-                value={newPassword}
-                onChange={(e) => setNewPassword(e.target.value)}
-                name="reset-password"
-                autoComplete="off"
-                suppressHydrationWarning={true}
-                className={`w-full border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400" : "bg-white border-gray-200 text-black placeholder-gray-500"} focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-200`}
-              />
-            )}
-            <button
-              onClick={handleReset}
-              className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-indigo-700 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200"
-            >
-              {firebaseEnabled ? "Send Reset Email" : "Set New Password"}
-            </button>
+        <div className="animate-fade-scale" style={{width:'100%',maxWidth:'460px'}}>
+          <div style={{textAlign:'center',marginBottom:'32px'}}>
+            <div style={{fontSize:'48px',marginBottom:'12px'}} className="animate-float">🔐</div>
+            <h1 style={{fontSize:'2.2rem',fontWeight:900,background:'linear-gradient(135deg,#67e8f9,#a5b4fc)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',marginBottom:'6px'}}>Reset Password</h1>
+            <p style={{color:'rgba(148,163,184,0.7)',fontSize:'0.9rem'}}>We'll help you get back in</p>
           </div>
-          <p className="text-sm text-gray-500 mt-4">
-            Remembered password? <Link to="/login" className="text-blue-600 underline hover:text-blue-700">Login here</Link>
-          </p>
+          <div className="glass-card" style={{padding:'36px'}}>
+            <div style={{display:'flex',flexDirection:'column',gap:'16px'}}>
+              <div>
+                <label className="form-label">Registered Email</label>
+                <input ref={resetEmailRef} type="email" placeholder="you@example.com"
+                  value={email} onChange={(e) => setEmail(e.target.value)}
+                  name="reset-email" autoComplete="off" suppressHydrationWarning={true}
+                  className="input-premium" />
+              </div>
+              {!firebaseEnabled && (
+                <div>
+                  <label className="form-label">New Password</label>
+                  <input ref={resetPasswordRef} type="password" placeholder="••••••••"
+                    value={newPassword} onChange={(e) => setNewPassword(e.target.value)}
+                    name="reset-password" autoComplete="off" suppressHydrationWarning={true}
+                    className="input-premium" />
+                </div>
+              )}
+              <button onClick={handleReset} className="btn btn-primary" style={{width:'100%',padding:'16px',fontSize:'1rem',marginTop:'8px'}}>
+                {firebaseEnabled ? '📧 Send Reset Email' : '🔑 Set New Password'}
+              </button>
+            </div>
+            <div style={{marginTop:'20px',textAlign:'center'}}>
+              <p style={{fontSize:'0.875rem',color:'rgba(148,163,184,0.7)'}}>
+                Remembered it?{' '}
+                <Link to="/login" style={{color:'#a5b4fc',fontWeight:600,textDecoration:'none'}}>Sign in →</Link>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
@@ -581,128 +537,66 @@ function DashboardPage({
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className={`flex-1 p-6 ${darkMode ? "bg-gradient-to-br from-gray-900 via-slate-900 to-zinc-900" : "bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50"}`}>
+      <div style={{flex:1,padding:'24px',maxWidth:'1280px',margin:'0 auto',width:'100%'}}>
         {notification && (
-          <div className={`fixed top-20 right-4 px-4 py-3 rounded-lg text-white ${notification.type === "success" ? "bg-gradient-to-r from-green-500 to-emerald-500" : "bg-gradient-to-r from-red-500 to-pink-500"} shadow-lg z-50 animate-pulse`}>
+          <div className={`notification-toast ${notification.type === 'success' ? 'notification-success' : notification.type === 'warning' ? 'notification-warning' : 'notification-error'}`}>
+            <span>{notification.type === 'success' ? '✅' : notification.type === 'warning' ? '⚠️' : '❌'}</span>
             {notification.message}
           </div>
         )}
-
         {!apiAvailable && (
-          <div className="mb-6 rounded-3xl border border-yellow-300 bg-yellow-50/80 p-4 text-yellow-900 shadow-inner">
-            Backend unavailable. Tasks will be saved locally for now.
+          <div style={{marginBottom:'20px',borderRadius:'14px',background:'rgba(245,158,11,0.12)',border:'1px solid rgba(245,158,11,0.3)',padding:'14px 18px',color:'#fcd34d',fontSize:'0.9rem',display:'flex',alignItems:'center',gap:'10px'}}>
+            ⚠️ Backend unavailable. Tasks will be saved locally for now.
           </div>
         )}
 
-        <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-slate-700 text-white p-6 rounded-3xl shadow-2xl mb-6">
-          <div className="flex flex-col md:flex-row justify-between gap-4 items-start md:items-center">
+        {/* Welcome Banner */}
+        <div style={{background:'linear-gradient(135deg,rgba(99,102,241,0.3) 0%,rgba(139,92,246,0.2) 50%,rgba(6,182,212,0.15) 100%)',border:'1px solid rgba(99,102,241,0.3)',borderRadius:'24px',padding:'28px 32px',marginBottom:'24px',position:'relative',overflow:'hidden'}}>
+          <div style={{position:'absolute',top:0,right:0,width:'200px',height:'200px',background:'radial-gradient(circle,rgba(99,102,241,0.2),transparent)',borderRadius:'50%',transform:'translate(50%,-50%)'}} />
+          <div className="flex" style={{justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:'16px'}}>
             <div>
-              <h1 className="text-4xl font-bold text-white">Welcome, {currentUser.username}</h1>
-              <p className="text-lg mt-2 opacity-90">This is your personal dashboard.</p>
+              <p style={{color:'rgba(148,163,184,0.7)',fontSize:'0.85rem',textTransform:'uppercase',letterSpacing:'0.08em',marginBottom:'6px'}}>Welcome back</p>
+              <h1 style={{fontSize:'2rem',fontWeight:900,color:'#f1f5f9',lineHeight:1.2}}>Hello, <span style={{background:'linear-gradient(135deg,#a5b4fc,#67e8f9)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>{currentUser.username}</span> 👋</h1>
+              <p style={{color:'rgba(148,163,184,0.6)',marginTop:'6px',fontSize:'0.9rem'}}>Here's what's happening with your tasks today.</p>
             </div>
-            <div className="flex gap-3 flex-wrap">
-              <Link to="/profile" className="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-xl hover:bg-white/30 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200">
-                Profile
-              </Link>
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-xl hover:bg-white/30 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200"
-              >
-                {darkMode ? "☀️ Light" : "🌙 Dark"}
+            <div style={{display:'flex',gap:'10px',flexWrap:'wrap'}}>
+              <Link to="/profile" className="btn btn-ghost" style={{padding:'10px 18px',fontSize:'0.85rem'}}>👤 Profile</Link>
+              <button onClick={() => setDarkMode(!darkMode)} className="btn btn-ghost" style={{padding:'10px 18px',fontSize:'0.85rem'}}>
+                {darkMode ? '☀️ Light' : '🌙 Dark'}
               </button>
-              <button
-                onClick={() => logout(navigate)}
-                className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-6 py-3 rounded-xl hover:from-red-600 hover:to-pink-600 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200"
-              >
-                Logout
-              </button>
+              <button onClick={() => logout(navigate)} className="btn btn-danger" style={{padding:'10px 18px',fontSize:'0.85rem'}}>🙊 Logout</button>
             </div>
           </div>
         </div>
 
-        <div className={`${darkMode ? "bg-gray-800/90 backdrop-blur-sm" : "bg-white/90 backdrop-blur-sm"} mt-6 p-6 rounded-3xl shadow-2xl border border-white/20`}>
-          <h2 className="text-2xl font-bold mb-6 text-green-600">Add New Task</h2>
-          <div className="space-y-6">
-            <input
-              ref={taskInputRef}
-              type="text"
-              autoComplete="off"
-              spellCheck="false"
-              name="task-title"
-              placeholder="Enter task..."
-              value={task}
-              onChange={handleTaskChange}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  e.preventDefault();
-                  handleAddTask();
-                }
-              }}
-              className={`w-full border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400" : "bg-white border-gray-200 text-black placeholder-gray-500"} focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200`}
-            />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <select
-                name="task-category"
-                value={category}
-                onChange={handleCategoryChange}
-                className={`border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white" : "bg-white border-gray-200 text-black"} focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all duration-200`}
-              >
-                <option>Work</option>
-                <option>Personal</option>
-                <option>Shopping</option>
-                <option>Health</option>
-                <option>Learning</option>
+        {/* Add New Task */}
+        <div className="section-card">
+          <h2 className="heading-green" style={{fontSize:'1.4rem',fontWeight:800,marginBottom:'20px'}}>➕ Add New Task</h2>
+          <div style={{display:'flex',flexDirection:'column',gap:'16px'}}>
+            <input ref={taskInputRef} type="text" autoComplete="off" spellCheck="false" name="task-title"
+              placeholder="What needs to be done?"
+              value={task} onChange={handleTaskChange}
+              onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); handleAddTask(); } }}
+              className="input-premium" style={{fontSize:'1.05rem',padding:'16px 20px'}} />
+            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:'12px'}}>
+              <select name="task-category" value={category} onChange={handleCategoryChange} className="input-premium">
+                <option>Work</option><option>Personal</option><option>Shopping</option><option>Health</option><option>Learning</option>
               </select>
-              <select
-                name="task-priority"
-                value={priority}
-                onChange={handlePriorityChange}
-                className={`border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white" : "bg-white border-gray-200 text-black"} focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all duration-200`}
-              >
-                <option>High</option>
-                <option>Medium</option>
-                <option>Low</option>
+              <select name="task-priority" value={priority} onChange={handlePriorityChange} className="input-premium">
+                <option>High</option><option>Medium</option><option>Low</option>
               </select>
-              <input
-                name="task-due-date"
-                type="date"
-                value={dueDate}
-                onChange={handleDueDateChange}
-                className={`border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white" : "bg-white border-gray-200 text-black"} focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all duration-200`}
-              />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-              <select
-                name="task-project"
-                value={selectedProjectId}
-                onChange={handleProjectSelectChange}
-                className={`border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white" : "bg-white border-gray-200 text-black"} focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all duration-200`}
-              >
+              <input name="task-due-date" type="date" value={dueDate} onChange={handleDueDateChange} className="input-premium" />
+              <select name="task-project" value={selectedProjectId} onChange={handleProjectSelectChange} className="input-premium">
                 <option value="">No project</option>
-                {projects.map((project) => (
-                  <option key={project._id} value={project._id}>{project.name}</option>
-                ))}
+                {projects.map((project) => <option key={project._id} value={project._id}>{project.name}</option>)}
               </select>
-              <select
-                name="task-assigned-to"
-                value={assignedTo}
-                onChange={handleAssignedToChange}
-                className={`border-2 p-4 rounded-xl ${darkMode ? "bg-gray-700 border-gray-600 text-white" : "bg-white border-gray-200 text-black"} focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all duration-200`}
-              >
+              <select name="task-assigned-to" value={assignedTo} onChange={handleAssignedToChange} className="input-premium">
                 <option value="">Assign to me</option>
-                {projects
-                  .find((project) => project._id === selectedProjectId)
-                  ?.members?.map((member) => (
-                    <option key={member._id} value={member._id}>{member.username}</option>
-                  ))}
+                {projects.find((p) => p._id === selectedProjectId)?.members?.map((m) => <option key={m._id} value={m._id}>{m.username}</option>)}
               </select>
             </div>
-            <button
-              type="button"
-              onClick={handleAddTask}
-              className="w-full bg-gradient-to-r from-green-500 to-green-700 text-white py-4 rounded-xl font-semibold hover:from-green-600 hover:to-green-800 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200"
-            >
-              Add Task
+            <button type="button" onClick={handleAddTask} className="btn btn-success" style={{padding:'16px',fontSize:'1rem',width:'100%'}}>
+              ➕ Add Task
             </button>
           </div>
         </div>
@@ -725,172 +619,94 @@ function DashboardPage({
           memberEmailRef={memberEmailRef}
         />
 
-        <div className={`${darkMode ? "bg-gray-800/90 backdrop-blur-sm" : "bg-white/90 backdrop-blur-sm"} mt-6 p-6 rounded-3xl shadow-2xl border border-white/20`}>
-          <div className="flex flex-col md:flex-row justify-between gap-3 md:items-center">
-            <h2 className="text-2xl font-bold text-blue-600">Dashboard Summary</h2>
-            <div className="flex gap-3 flex-wrap">
-              <Link to="/dashboard" className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200">Dashboard</Link>
-              <Link to="/profile" className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200">Profile</Link>
+        {/* Stats */}
+        <div className="section-card stagger-children" style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(150px,1fr))',gap:'16px',padding:'24px'}}>
+          {[
+            {label:'User',value:currentUser.username,icon:'👤',cls:'stat-card-total'},
+            {label:'Total Tasks',value:totalTasks,icon:'📋',cls:'stat-card-total'},
+            {label:'Completed',value:completedTasks,icon:'✅',cls:'stat-card-completed'},
+            {label:'Pending',value:pendingTasks,icon:'⏳',cls:'stat-card-pending'},
+            {label:'Overdue',value:overdueTasks,icon:'🔴',cls:'stat-card-overdue'},
+          ].map((s,i)=>(
+            <div key={i} className={`stat-card ${s.cls} animate-fade-up`} style={{animationDelay:`${i*0.07}s`}}>
+              <div style={{fontSize:'24px',marginBottom:'8px'}}>{s.icon}</div>
+              <p style={{fontSize:'0.75rem',color:'rgba(148,163,184,0.7)',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:'4px'}}>{s.label}</p>
+              <p style={{fontSize:'1.8rem',fontWeight:800,color:'#f1f5f9'}}>{s.value}</p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mt-6">
-            <div className={`p-6 rounded-2xl ${darkMode ? "bg-gradient-to-br from-slate-700 to-slate-800" : "bg-gradient-to-br from-blue-50 to-indigo-50"} shadow-lg border border-white/20`}>
-              <p className="text-sm text-gray-500 mb-2">Username</p>
-              <p className="text-2xl font-bold text-indigo-600">{currentUser.username}</p>
-            </div>
-            <div className={`p-6 rounded-2xl ${darkMode ? "bg-gradient-to-br from-slate-700 to-slate-800" : "bg-gradient-to-br from-green-50 to-emerald-50"} shadow-lg border border-white/20`}>
-              <p className="text-sm text-gray-500 mb-2">Total Tasks</p>
-              <p className="text-2xl font-bold text-green-600">{totalTasks}</p>
-            </div>
-            <div className={`p-6 rounded-2xl ${darkMode ? "bg-gradient-to-br from-slate-700 to-slate-800" : "bg-gradient-to-br from-emerald-50 to-teal-50"} shadow-lg border border-white/20`}>
-              <p className="text-sm text-gray-500 mb-2">Completed</p>
-              <p className="text-2xl font-bold text-emerald-600">{completedTasks}</p>
-            </div>
-            <div className={`p-6 rounded-2xl ${darkMode ? "bg-gradient-to-br from-slate-700 to-slate-800" : "bg-gradient-to-br from-orange-50 to-red-50"} shadow-lg border border-white/20`}>
-              <p className="text-sm text-gray-500 mb-2">Pending</p>
-              <p className="text-2xl font-bold text-orange-600">{pendingTasks}</p>
-            </div>
-            <div className={`p-6 rounded-2xl ${darkMode ? "bg-gradient-to-br from-slate-700 to-slate-800" : "bg-gradient-to-br from-red-50 to-pink-50"} shadow-lg border border-white/20`}>
-              <p className="text-sm text-gray-500 mb-2">Overdue</p>
-              <p className="text-2xl font-bold text-red-600">{overdueTasks}</p>
-            </div>
+        {/* Progress */}
+        <div className="section-card">
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'12px'}}>
+            <p style={{fontWeight:600,color:'rgba(148,163,184,0.8)',fontSize:'0.9rem'}}>Task Completion Progress</p>
+            <span style={{fontWeight:800,fontSize:'1.1rem',background:'linear-gradient(135deg,#a5b4fc,#67e8f9)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent'}}>{progressPercentage}%</span>
           </div>
-
-          <div className="mt-8">
-            <div className="flex items-center justify-between mb-3">
-              <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">Task completion progress</p>
-              <p className="text-lg font-bold text-indigo-600">{progressPercentage}%</p>
-            </div>
-            <div className="w-full h-6 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden shadow-inner">
-              <div className="h-6 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-lg" style={{ width: `${progressPercentage}%` }} />
-            </div>
+          <div className="progress-track">
+            <div className="progress-fill" style={{width:`${progressPercentage}%`}} />
           </div>
         </div>
 
-        <div className={`${darkMode ? "bg-gray-800/90 backdrop-blur-sm" : "bg-white/90 backdrop-blur-sm"} mt-6 p-6 rounded-3xl shadow-2xl border border-white/20`}>
-          <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Your Tasks</h2>
-          <div className="flex flex-col md:flex-row md:justify-between gap-4 mb-6">
-            <div className="flex gap-3 flex-wrap">
-              <button
-                onClick={() => setFilter("All")}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95 active:shadow-inner ${
-                  filter === "All"
-                    ? "bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg"
-                    : `${darkMode ? "bg-gray-700 text-white hover:bg-gray-600" : "bg-gray-100 text-black hover:bg-gray-200"}`
-                }`}
-              >
-                All
-              </button>
-              <button
-                onClick={() => setFilter("Completed")}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95 active:shadow-inner ${
-                  filter === "Completed"
-                    ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg"
-                    : `${darkMode ? "bg-gray-700 text-white hover:bg-gray-600" : "bg-gray-100 text-black hover:bg-gray-200"}`
-                }`}
-              >
-                ✅ Completed
-              </button>
-              <button
-                onClick={() => setFilter("Pending")}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95 active:shadow-inner ${
-                  filter === "Pending"
-                    ? "bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-lg"
-                    : `${darkMode ? "bg-gray-700 text-white hover:bg-gray-600" : "bg-gray-100 text-black hover:bg-gray-200"}`
-                }`}
-              >
-                ⏳ Pending
-              </button>
+        {/* Task List */}
+        <div className="section-card">
+          <h2 className="heading-gradient" style={{fontSize:'1.4rem',fontWeight:800,marginBottom:'20px'}}>📌 Your Tasks</h2>
+          <div style={{display:'flex',flexWrap:'wrap',justifyContent:'space-between',gap:'12px',marginBottom:'20px'}}>
+            <div style={{display:'flex',gap:'8px',flexWrap:'wrap'}}>
+              <button onClick={() => setFilter("All")} className={`filter-tab ${filter==="All"?"active-all":""}`}>All</button>
+              <button onClick={() => setFilter("Completed")} className={`filter-tab ${filter==="Completed"?"active-done":""}`}>✅ Completed</button>
+              <button onClick={() => setFilter("Pending")} className={`filter-tab ${filter==="Pending"?"active-pending":""}`}>⏳ Pending</button>
             </div>
-            <div className="flex gap-3 flex-wrap">
-              <input
-                type="text"
-                placeholder="Search task..."
-                value={search}
+            <div style={{display:'flex',gap:'8px'}}>
+              <input type="text" placeholder="🔍 Search tasks..." value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 onKeyDown={(e) => { if (e.key === 'Enter') e.preventDefault(); }}
-                className={`border-2 p-3 rounded-xl min-w-64 ${darkMode ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400" : "bg-white border-gray-200 text-black placeholder-gray-500"} focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200`}
-              />
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className={`px-6 py-3 rounded-xl font-semibold ${darkMode ? "bg-gray-700 text-white" : "bg-gray-100 text-black"} focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all duration-200`}
-              >
-                <option>Default</option>
-                <option>Priority</option>
-                <option>Date</option>
-                <option>Category</option>
-                <option>Completion</option>
+                className="input-premium" style={{minWidth:'200px',padding:'10px 14px'}} />
+              <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="input-premium" style={{padding:'10px 14px'}}>
+                <option>Default</option><option>Priority</option><option>Date</option><option>Category</option><option>Completion</option>
               </select>
             </div>
           </div>
 
           {tasks.length === 0 ? (
-            <p className="text-center text-gray-500 py-12 text-lg">No tasks added yet.</p>
+            <div style={{textAlign:'center',padding:'60px 20px',color:'rgba(148,163,184,0.5)'}}>
+              <div style={{fontSize:'48px',marginBottom:'16px'}}>📭</div>
+              <p style={{fontSize:'1.1rem'}}>No tasks yet. Add your first task above!</p>
+            </div>
           ) : getSortedTasks().length === 0 ? (
-            <p className="text-center text-gray-500 py-12 text-lg">No tasks match your filter.</p>
+            <div style={{textAlign:'center',padding:'60px 20px',color:'rgba(148,163,184,0.5)'}}>
+              <div style={{fontSize:'48px',marginBottom:'16px'}}>🔍</div>
+              <p>No tasks match your filter.</p>
+            </div>
           ) : (
-            <ul className="space-y-4">
+            <ul style={{display:'flex',flexDirection:'column',gap:'12px',listStyle:'none',padding:0}}>
               {getSortedTasks().map((item) => {
                 const actualIndex = tasks.indexOf(item);
                 return (
-                  <li
-                    key={actualIndex}
-                    draggable
+                  <li key={actualIndex} draggable
                     onDragStart={() => handleDragStart(actualIndex)}
                     onDragOver={handleDragOver}
                     onDrop={() => handleDrop(actualIndex)}
-                    className={`flex flex-col md:flex-row justify-between items-center border-2 p-6 rounded-2xl cursor-move transition-all duration-200 transform hover:scale-102 hover:shadow-xl ${
-                      draggedIndex === actualIndex
-                        ? "opacity-50 bg-gray-300"
-                        : item.completed
-                        ? `${darkMode ? "bg-gradient-to-r from-gray-700 to-gray-800 border-gray-600" : "bg-gradient-to-r from-green-50 to-emerald-50 border-green-200"}`
-                        : `${darkMode ? "bg-gradient-to-r from-slate-700 to-slate-800 border-slate-600" : "bg-gradient-to-r from-white to-blue-50 border-blue-200"}`
-                    }`}
+                    className={`task-card ${item.completed ? 'completed' : ''} ${draggedIndex === actualIndex ? 'dragging' : ''} animate-fade-up`}
                   >
-                    <div className="flex-1">
-                      <div className={item.completed ? "line-through text-gray-400" : ""}>{item.title}</div>
-                      <div className="text-sm text-gray-500 mt-2">
-                        Category: {item.category} | Due: {item.dueDate || "No date"} | Priority: {item.priority}
+                    <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:'12px'}}>
+                      <div style={{flex:1,minWidth:'200px'}}>
+                        <p style={{fontWeight:600,fontSize:'1rem',color: item.completed ? 'rgba(148,163,184,0.5)' : '#f1f5f9',textDecoration:item.completed?'line-through':'none',marginBottom:'6px'}}>
+                          {item.title}
+                        </p>
+                        <p style={{fontSize:'0.78rem',color:'rgba(148,163,184,0.55)'}}>
+                          📁 {item.category} &nbsp;•&nbsp; 📅 {item.dueDate || 'No date'}
+                        </p>
                       </div>
-                    </div>
-
-                    <span
-                      className={`ml-0 md:ml-4 mt-4 md:mt-0 px-4 py-2 rounded-full text-sm font-semibold text-white ${
-                        item.priority === "High"
-                          ? "bg-gradient-to-r from-red-500 to-pink-500"
-                          : item.priority === "Medium"
-                          ? "bg-gradient-to-r from-yellow-500 to-orange-500"
-                          : "bg-gradient-to-r from-green-500 to-emerald-500"
-                      }`}
-                    >
-                      {item.priority}
-                    </span>
-
-                    <div className="flex gap-3 mt-4 md:mt-0">
-                      <button
-                        onClick={() => editTask(item._id)}
-                        className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-xl hover:from-yellow-600 hover:to-orange-600 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200"
-                      >
-                        Edit
-                      </button>
-                      <button
-                        onClick={() => completeTask(item._id)}
-                        className={`px-4 py-2 rounded-xl text-white shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200 ${
-                          item.completed
-                            ? "bg-gradient-to-r from-gray-500 to-slate-500 hover:from-gray-600 hover:to-slate-600"
-                            : "bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600"
-                        }`}
-                      >
-                        {item.completed ? "Undo" : "Complete"}
-                      </button>
-                      <button
-                        onClick={() => deleteTaskItem(item._id)}
-                        className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-xl hover:from-red-600 hover:to-pink-600 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 active:shadow-inner transition-all duration-200"
-                      >
-                        Delete
-                      </button>
+                      <div style={{display:'flex',alignItems:'center',gap:'10px',flexWrap:'wrap'}}>
+                        <span className={`priority-badge ${item.priority==='High'?'priority-high':item.priority==='Medium'?'priority-medium':'priority-low'}`}>
+                          {item.priority==='High'?'🔴':item.priority==='Medium'?'🟡':'🟢'} {item.priority}
+                        </span>
+                        <button onClick={() => editTask(item._id)} className="btn btn-warning" style={{padding:'7px 14px',fontSize:'0.82rem'}}>✏️ Edit</button>
+                        <button onClick={() => completeTask(item._id)} className={`btn ${item.completed ? 'btn-ghost' : 'btn-success'}`} style={{padding:'7px 14px',fontSize:'0.82rem'}}>
+                          {item.completed ? '↩️ Undo' : '✅ Done'}
+                        </button>
+                        <button onClick={() => deleteTaskItem(item._id)} className="btn btn-danger" style={{padding:'7px 14px',fontSize:'0.82rem'}}>🗑️</button>
+                      </div>
                     </div>
                   </li>
                 );

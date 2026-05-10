@@ -61,3 +61,4 @@ Ab Frontend service ko configure karte hain:
 Thodi der mein jab dono services puri tarah se deploy ho jayengi (green checkmark aa jayega), toh aap apne Frontend wale link ko browser mein khol kar dekh sakte hain. 
 
 Aapki website ab live hai, Frontend aur Backend dono ek sath chal rahe hain, aur MongoDB alag se securely connect ho gaya hai! Agar kisi step mein problem aaye, toh aap mujhse pooch sakte hain.
+
