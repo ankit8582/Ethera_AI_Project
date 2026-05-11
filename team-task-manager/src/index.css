@@ -752,3 +752,29 @@ input:focus {
 input:focus, select:focus, textarea:focus {
   outline: none !important;
 }
+
+/* ============================================================
+   SELECT DROPDOWN - CUSTOM OPTION COLORS
+   ============================================================ */
+
+select {
+  background-color: #1a1a2e;
+  color: #e2e8f0;
+}
+
+select option {
+  background-color: #1e1e3a;
+  color: #e2e8f0;
+}
+
+select option:checked,
+select option:selected {
+  background-color: #4c1d95;
+  background: linear-gradient(135deg, #5b21b6, #3730a3);
+  color: #ffffff;
+}
+
+select option:hover {
+  background-color: #312e81;
+  color: #ffffff;
+}
