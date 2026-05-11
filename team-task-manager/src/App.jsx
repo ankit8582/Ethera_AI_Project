@@ -952,13 +952,14 @@ function App() {
           uid: userCredential.user.uid,
         };
         setUsers([...savedUsers, newUser]);
-        setCurrentUser(newUser);
-        setTasks([]);
+        // ❌ Do NOT auto-login after register
         setRegUsername("");
         setRegEmail("");
         setRegPassword("");
-        showNotification("Firebase registration successful!", "success");
-        navigate("/dashboard");
+        // Sign out from Firebase so user must login manually
+        await auth.signOut();
+        showNotification("Registration successful! Please login to continue.", "success");
+        navigate("/login");
         return;
       } catch (error) {
         console.error("Firebase register error:", error?.code, error?.message, error);
@@ -970,17 +971,12 @@ function App() {
     try {
       const response = await authRegister({ username, email, password, role: 'member' });
       setUsers([...savedUsers, response.user]);
-      setCurrentUser(response.user);
-      setToken(response.token);
-      setTasks([]);
-      setProjects([]);
+      // ❌ Do NOT auto-login after register
       setRegUsername("");
       setRegEmail("");
       setRegPassword("");
-      await loadTasks(response.user.id, response.token);
-      await loadProjects(response.token);
-      showNotification("Registration successful! Logged in.", "success");
-      navigate("/dashboard");
+      showNotification("Registration successful! Please login to continue.", "success");
+      navigate("/login");
     } catch (error) {
       showNotification(error.message || "Registration failed.", "error");
     }

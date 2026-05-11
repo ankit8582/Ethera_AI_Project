@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ethera AI - README</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', Arial, sans-serif; background: #f8f9ff; color: #1e1e2e; padding: 40px; max-width: 900px; margin: auto; }
+
+  .header-box { background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4); color: white; padding: 32px 40px; border-radius: 16px; text-align: center; margin-bottom: 32px; }
+  .header-box h1 { font-size: 2rem; font-weight: 800; letter-spacing: 1px; }
+  .header-box p { font-size: 1rem; opacity: 0.85; margin-top: 6px; }
+
+  .section { background: white; border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; border-left: 5px solid #6366f1; box-shadow: 0 2px 12px rgba(99,102,241,0.1); }
+  .section.green  { border-left-color: #10b981; }
+  .section.purple { border-left-color: #8b5cf6; }
+  .section.cyan   { border-left-color: #06b6d4; }
+  .section.orange { border-left-color: #f59e0b; }
+  .section.pink   { border-left-color: #ec4899; }
+
+  .section-title { font-size: 1.1rem; font-weight: 800; color: #6366f1; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .section.green  .section-title { color: #10b981; }
+  .section.purple .section-title { color: #8b5cf6; }
+  .section.cyan   .section-title { color: #06b6d4; }
+  .section.orange .section-title { color: #f59e0b; }
+  .section.pink   .section-title { color: #ec4899; }
+
+  .url-box { background: #f0f4ff; border: 1px solid #c7d2fe; border-radius: 8px; padding: 10px 16px; margin: 6px 0; font-family: monospace; font-size: 0.9rem; color: #4338ca; word-break: break-all; }
+  .url-label { font-size: 0.8rem; color: #6b7280; font-weight: 600; margin-bottom: 2px; }
+
+  .badge { display: inline-block; background: #ede9fe; color: #7c3aed; padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; margin: 3px 3px 3px 0; }
+  .badge.green  { background: #d1fae5; color: #065f46; }
+  .badge.blue   { background: #dbeafe; color: #1e40af; }
+  .badge.orange { background: #fef3c7; color: #92400e; }
+
+  .feature-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .feature-list li { font-size: 0.88rem; color: #374151; padding: 4px 0; display: flex; align-items: flex-start; gap: 6px; }
+  .feature-list li::before { content: "✅"; font-size: 0.85rem; flex-shrink: 0; }
+
+  .stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stack-box { background: #f9fafb; border-radius: 8px; padding: 14px; border: 1px solid #e5e7eb; }
+  .stack-box h4 { font-size: 0.85rem; font-weight: 700; color: #374151; margin-bottom: 8px; }
+  .stack-box p  { font-size: 0.82rem; color: #6b7280; line-height: 1.7; }
+
+  .code-box { background: #1e1e2e; color: #a5b4fc; padding: 14px 18px; border-radius: 8px; font-family: monospace; font-size: 0.82rem; margin: 8px 0; line-height: 1.8; }
+
+  .info-row { display: flex; gap: 8px; margin: 6px 0; font-size: 0.88rem; }
+  .info-label { font-weight: 700; color: #374151; min-width: 100px; }
+  .info-value { color: #6b7280; }
+
+  .update-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+  .update-list li { font-size: 0.83rem; color: #374151; display: flex; gap: 6px; align-items: flex-start; }
+  .update-list li::before { content: "✅"; flex-shrink: 0; }
+
+  .footer-box { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 20px; border-radius: 12px; text-align: center; margin-top: 28px; }
+  .footer-box p { font-size: 0.9rem; opacity: 0.9; }
+
+  @media print {
+    body { background: white; padding: 20px; }
+    .section { box-shadow: none; border: 1px solid #e5e7eb; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header-box">
+  <h1>📋 ETHERA AI — TEAM TASK MANAGER</h1>
+  <p>Project Documentation &amp; Deployment Information &nbsp;|&nbsp; v1.0.0 &nbsp;|&nbsp; 2026</p>
+</div>
+
+<!-- LIVE URLs -->
+<div class="section cyan">
+  <div class="section-title">🌐 Live Application URLs</div>
+  <div class="url-label">Frontend (React App):</div>
+  <div class="url-box">https://ethera-frontend-production.up.railway.app</div>
+  <div class="url-label">Backend API:</div>
+  <div class="url-box">https://etheraaiproject-production.up.railway.app</div>
+  <div class="url-label">Railway Project Dashboard:</div>
+  <div class="url-box">https://railway.com/project/bad46a33-340e-4081-a0e8-062356f22e96</div>
+</div>
+
+<!-- GITHUB -->
+<div class="section purple">
+  <div class="section-title">📁 GitHub Repository</div>
+  <div class="url-label">Repository URL:</div>
+  <div class="url-box">https://github.com/ankit8582/Ethera_AI_Project</div>
+  <div class="url-label">Clone Command:</div>
+  <div class="code-box">git clone https://github.com/ankit8582/Ethera_AI_Project.git</div>
+  <div class="info-row"><span class="info-label">Main Branch:</span><span class="info-value">main</span></div>
+</div>
+
+<!-- PROJECT OVERVIEW -->
+<div class="section">
+  <div class="section-title">📋 Project Overview</div>
+  <div class="info-row"><span class="info-label">Name:</span><span class="info-value">Ethera AI - Team Task Manager</span></div>
+  <div class="info-row"><span class="info-label">Version:</span><span class="info-value">1.0.0</span></div>
+  <div class="info-row"><span class="info-label">Description:</span><span class="info-value">A premium, full-stack team task management app with real-time collaboration, Firebase authentication, and MongoDB backend.</span></div>
+</div>
+
+<!-- TECH STACK -->
+<div class="section orange">
+  <div class="section-title">🛠️ Tech Stack</div>
+  <div class="stack-grid">
+    <div class="stack-box">
+      <h4>⚛️ Frontend</h4>
+      <p>React 19<br>Vite (build tool)<br>TailwindCSS v4<br>Custom CSS (Glassmorphism)<br>React Router DOM<br>Firebase Authentication</p>
+    </div>
+    <div class="stack-box">
+      <h4>🖥️ Backend</h4>
+      <p>Node.js<br>Express.js<br>MongoDB (Atlas)<br>Mongoose ODM<br><br>Railway.app (Deployment)</p>
+    </div>
+  </div>
+</div>
+
+<!-- KEY FEATURES -->
+<div class="section green">
+  <div class="section-title">✨ Key Features</div>
+  <ul class="feature-list">
+    <li>User Registration &amp; Login (Firebase)</li>
+    <li>Password Reset via Email</li>
+    <li>Create, Edit, Delete Tasks</li>
+    <li>Task Categories &amp; Priority levels</li>
+    <li>Due Date tracking &amp; Overdue detection</li>
+    <li>Task Completion toggle</li>
+    <li>Drag &amp; Drop task reordering</li>
+    <li>Search &amp; Sort tasks</li>
+    <li>Project &amp; Team Management</li>
+    <li>Add/Remove Team Members</li>
+    <li>Assign Tasks to Members</li>
+    <li>Dashboard Statistics</li>
+    <li>Progress Bar (completion %)</li>
+    <li>Dark / Light Mode toggle</li>
+    <li>Offline-first (LocalStorage)</li>
+    <li>Responsive Design (mobile+desktop)</li>
+  </ul>
+</div>
+
+<!-- UI DESIGN -->
+<div class="section purple">
+  <div class="section-title">🎨 UI Design System</div>
+  <div class="info-row"><span class="info-label">Theme:</span><span class="info-value">Premium Dark (Glassmorphism)</span></div>
+  <div class="info-row"><span class="info-label">Font:</span><span class="info-value">Plus Jakarta Sans, Inter (Google Fonts)</span></div>
+  <div class="info-row"><span class="info-label">Primary:</span><span class="info-value">Indigo #6366f1</span></div>
+  <div style="margin-top:10px;">
+    <span class="badge">Glassmorphism Cards</span>
+    <span class="badge">Gradient Backgrounds</span>
+    <span class="badge">Float Animations</span>
+    <span class="badge green">Priority Badges</span>
+    <span class="badge blue">Toast Notifications</span>
+    <span class="badge orange">Progress Bar</span>
+    <span class="badge">Box-Shadow Glow</span>
+    <span class="badge green">Hover Transitions</span>
+  </div>
+</div>
+
+<!-- LOCAL SETUP -->
+<div class="section">
+  <div class="section-title">⚙️ Local Setup &amp; Development</div>
+  <div class="code-box">
+    # 1. Clone repository<br>
+    git clone https://github.com/ankit8582/Ethera_AI_Project.git<br>
+    <br>
+    # 2. Setup Backend<br>
+    cd backend &amp;&amp; npm install &amp;&amp; npm start<br>
+    <br>
+    # 3. Setup Frontend<br>
+    cd team-task-manager &amp;&amp; npm install &amp;&amp; npm run dev<br>
+    <br>
+    # 4. Open: http://localhost:5173
+  </div>
+</div>
+
+<!-- RECENT UPDATES -->
+<div class="section pink">
+  <div class="section-title">📝 Recent Updates (v1.0.0)</div>
+  <ul class="update-list">
+    <li>Premium CSS Glassmorphism system</li>
+    <li>Auth pages redesigned</li>
+    <li>Dashboard welcome banner</li>
+    <li>Stat cards with animations</li>
+    <li>Task cards with priority badges</li>
+    <li>Project form dark inputs</li>
+    <li>Dashboard box-shadow glow</li>
+    <li>Animated progress bar</li>
+    <li>Premium header &amp; footer</li>
+    <li>Google Fonts integrated</li>
+    <li>Railway production deploy</li>
+    <li>MongoDB Atlas connected</li>
+  </ul>
+</div>
+
+<!-- DEVELOPER -->
+<div class="section">
+  <div class="section-title">👤 Developer Info</div>
+  <div class="info-row"><span class="info-label">Developer:</span><span class="info-value">Ankit</span></div>
+  <div class="info-row"><span class="info-label">GitHub:</span><span class="info-value">https://github.com/ankit8582</span></div>
+  <div class="info-row"><span class="info-label">Project:</span><span class="info-value">Ethera AI Team Task Manager</span></div>
+  <div class="info-row"><span class="info-label">Year:</span><span class="info-value">2026</span></div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-box">
+  <p>© 2026 Ethera AI &nbsp;|&nbsp; Built with React, Firebase &amp; MongoDB &nbsp;|&nbsp; Deployed on Railway</p>
+</div>
+
+<!-- AUTO PRINT SCRIPT -->
+<script>
+  window.onload = function() {
+    setTimeout(function() { window.print(); }, 800);
+  };
+</script>
+
+</body>
+</html>
